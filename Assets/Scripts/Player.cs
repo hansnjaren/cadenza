@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
     }
 
     void FixedUpdate()
@@ -32,9 +33,14 @@ public class Player : MonoBehaviour
 
     void OnJump()
     {
-        if (rigidbody.linearVelocityY == 0.0f)
+        if (OnGround())
         {
-            rigidbody.linearVelocityY = speed;
+            rigidbody.linearVelocityY = jumpSpeed;
         }
+    }
+
+    private bool OnGround()
+    {
+        return Physics2D.Raycast(transform.position, Vector3.down, 0.2f);
     }
 }
