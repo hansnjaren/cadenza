@@ -5,9 +5,10 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private float speed = 5.0f;
     [SerializeField] private float jumpSpeed = 6.0f;
-    [SerializeField] private Rigidbody2D rigidbody;
+    [SerializeField] private new Rigidbody2D rigidbody;
 
     private float currentDir;
+    public bool canMove = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -23,7 +24,14 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-        rigidbody.linearVelocityX = speed * currentDir;
+        if (canMove)
+        {
+            rigidbody.linearVelocityX = speed * currentDir;
+        }
+        else
+        {
+            rigidbody.linearVelocityX = 0;
+        }
     }
 
     void OnDirection(InputValue dir)
@@ -33,6 +41,7 @@ public class Player : MonoBehaviour
 
     void OnJump()
     {
+        if (!canMove) return;
         if (OnGround())
         {
             rigidbody.linearVelocityY = jumpSpeed;
