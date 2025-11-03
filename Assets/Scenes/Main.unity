@@ -232,6 +232,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2896265673692552532, guid: 45a050ce2c7435defb1e15279fb5a207, type: 3}
+      propertyPath: groundLayer.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4472597874635102973, guid: 45a050ce2c7435defb1e15279fb5a207, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1448,7 +1452,7 @@ CompositeCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_GeometryType: 0
+  m_GeometryType: 1
   m_GenerationType: 0
   m_EdgeRadius: 0
   m_ColliderPaths:
@@ -1620,6 +1624,10 @@ CompositeCollider2D:
         Y: -10000000
   m_CompositePaths:
     m_Paths:
+    - - {x: -47.00003, y: 6}
+      - {x: -47.00003, y: 7}
+      - {x: -48, y: 6.9999704}
+      - {x: -47.999973, y: 6}
     - - {x: -19.000029, y: 3}
       - {x: -19.000029, y: 4}
       - {x: -20, y: 4.0000296}
@@ -1636,6 +1644,10 @@ CompositeCollider2D:
       - {x: -23.999971, y: 4}
       - {x: -21, y: 3.9999704}
       - {x: -20.999971, y: 3}
+    - - {x: -41.00003, y: 6}
+      - {x: -41.00003, y: 7}
+      - {x: -42, y: 6.9999704}
+      - {x: -41.999973, y: 6}
     - - {x: -29.000029, y: 6}
       - {x: -29.000029, y: 7}
       - {x: -30, y: 6.9999704}
@@ -1648,14 +1660,6 @@ CompositeCollider2D:
       - {x: -36.00003, y: 7}
       - {x: -37, y: 6.9999704}
       - {x: -36.999973, y: 6}
-    - - {x: -41.00003, y: 6}
-      - {x: -41.00003, y: 7}
-      - {x: -42, y: 6.9999704}
-      - {x: -41.999973, y: 6}
-    - - {x: -47.00003, y: 6}
-      - {x: -47.00003, y: 7}
-      - {x: -48, y: 6.9999704}
-      - {x: -47.999973, y: 6}
     - - {x: 23.999971, y: 2}
       - {x: 23.999971, y: 3}
       - {x: 23, y: 2.999971}
