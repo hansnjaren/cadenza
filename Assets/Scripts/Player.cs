@@ -6,6 +6,9 @@ public class Player : MonoBehaviour
     [SerializeField] private float speed = 5.0f;
     [SerializeField] private float jumpSpeed = 6.0f;
     [SerializeField] private new Rigidbody2D rigidbody;
+    [SerializeField] private float halfOnGroundOffset = 0.2f;
+
+    [SerializeField] private LayerMask groundLayer;
 
     private float currentDir;
     public bool canMove = true;
@@ -50,6 +53,9 @@ public class Player : MonoBehaviour
 
     private bool OnGround()
     {
-        return Physics2D.Raycast(transform.position, Vector3.down, 0.2f);
+        Vector2 origin = transform.position + Vector3.down * (halfOnGroundOffset);
+        Vector2 size = new Vector2(0.45f, halfOnGroundOffset);
+
+        return Physics2D.OverlapBox(origin, size, 0.0f, groundLayer);
     }
 }
