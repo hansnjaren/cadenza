@@ -24,4 +24,9 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    public Effects GetActiveEffects()
+    {
+        return ActiveEffects;
+    }
 }

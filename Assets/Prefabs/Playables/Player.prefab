@@ -109,9 +109,11 @@ MonoBehaviour:
   jumpSpeed: 6
   rigidbody: {fileID: 7362496871501705336}
   halfOnGroundOffset: 0.02
+  slurAcceleration: 25
+  slurDamp: 1
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
   canMove: 1
 --- !u!61 &2670840662405235899
 BoxCollider2D:

@@ -233,6 +233,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2896265673692552532, guid: 45a050ce2c7435defb1e15279fb5a207, type: 3}
+      propertyPath: slurDamp
+      value: 0.9995
+      objectReference: {fileID: 0}
+    - target: {fileID: 2896265673692552532, guid: 45a050ce2c7435defb1e15279fb5a207, type: 3}
+      propertyPath: slurAcceleration
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2896265673692552532, guid: 45a050ce2c7435defb1e15279fb5a207, type: 3}
       propertyPath: groundLayer.m_Bits
       value: 4294967295
       objectReference: {fileID: 0}
@@ -282,6 +290,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6820606981626630723, guid: 45a050ce2c7435defb1e15279fb5a207, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7362496871501705336, guid: 45a050ce2c7435defb1e15279fb5a207, type: 3}
+      propertyPath: m_LinearDamping
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
