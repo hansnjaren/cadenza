@@ -7,6 +7,8 @@ public class Player : MonoBehaviour
     [SerializeField] private float jumpSpeed = 6.0f;
     [SerializeField] private new Rigidbody2D rigidbody;
     [SerializeField] private float halfOnGroundOffset = 0.2f;
+    [SerializeField] private float slurAcceleration = 25.0f;
+    [SerializeField] private float slurDamp = 1.0f;
 
     [SerializeField] private LayerMask groundLayer;
 
@@ -27,9 +29,24 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
+        if ((GameManager.Instance.GetActiveEffects() & Effects.Slur) == Effects.Slur)
+        {
+            rigidbody.linearVelocityX = rigidbody.linearVelocityX * slurDamp;
+        }
+
         if (canMove)
         {
-            rigidbody.linearVelocityX = speed * currentDir;
+            if ((GameManager.Instance.GetActiveEffects() & Effects.Slur) == Effects.Slur)
+            {
+                if (currentDir != 0.0f)
+                {
+                    rigidbody.AddForce(slurAcceleration * currentDir * Vector2.right);
+                }
+            }
+            else
+            {
+                rigidbody.linearVelocityX = speed * currentDir;
+            }
         }
         else
         {
