@@ -1,3 +1,5 @@
+using System;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -74,5 +76,12 @@ public class Player : MonoBehaviour
         Vector2 size = new Vector2(0.45f, halfOnGroundOffset);
 
         return Physics2D.OverlapBox(origin, size, 0.0f, groundLayer);
+    }
+
+    public async void OnBeat(int beatNo)
+    {
+        canMove = false;
+        await Task.Delay(300);
+        canMove = true;
     }
 }

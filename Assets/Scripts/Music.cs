@@ -54,9 +54,4 @@ public class Music : MonoBehaviour
             beatNo = (beatNo + 1) % 4;
         }
     }
-
-    public void onBeatTest(int beat)
-    {
-        Debug.Log($"Asdf: {beat}");
-    }
 }
