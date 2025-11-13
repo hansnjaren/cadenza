@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
+using System.Linq;
+using System.Collections.Generic;
 
 public class Music : MonoBehaviour
 {
@@ -8,16 +10,12 @@ public class Music : MonoBehaviour
     [SerializeField] private AudioSource musicSource;
     [SerializeField] private double firstBeatOffset;
 
-    [SerializeField] private UnityEvent<int> onBeat;
+    [SerializeField] private BeatPattern[] patterns;
 
     private double secsPerBeat;
     private double songPositionSecs;
-    private double soneStartTime;
-    private double songPositionBeats;
     private double songStartTime;
-    private double nextBeatTime;
-
-    private int beatNo = 0;
+    private double songPositionBeats;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -29,7 +27,6 @@ public class Music : MonoBehaviour
         double dspTime = AudioSettings.dspTime;
 
         songStartTime = dspTime + 1.0;
-        nextBeatTime = 0.0;
 
         musicSource.PlayScheduled(songStartTime);
     }
@@ -46,12 +43,28 @@ public class Music : MonoBehaviour
 
         songPositionBeats = songPositionSecs / secsPerBeat;
 
-        if (songPositionBeats > nextBeatTime)
+        foreach (var pattern in patterns)
         {
-            nextBeatTime += 1.0;
-            onBeat.Invoke(beatNo);
 
-            beatNo = (beatNo + 1) % 4;
+            if (songPositionBeats > pattern.nextOccurTime)
+            {
+                pattern.beatsEnumerator.MoveNext();
+                if (pattern.beatsEnumerator.Current is (int beatNo, double nextOffset))
+                {
+                    pattern.nextOccurTime += nextOffset;
+                    pattern.beatEvent.Invoke(beatNo);
+                }
+            }
+        }
+
+    }
+
+    public void OnValidate()
+    {
+        foreach (var pattern in patterns)
+        {
+            pattern.nextOccurTime = pattern.initialOffset;
+            pattern.beatsEnumerator = Enumerable.Zip(EnumerableExtensions.Cycle(Enumerable.Range(0, pattern.beats.Length)), EnumerableExtensions.Cycle(pattern.beats), (a, b) => (a, b)).GetEnumerator();
         }
     }
 }
