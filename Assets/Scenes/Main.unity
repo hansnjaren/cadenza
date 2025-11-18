@@ -242,7 +242,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2896265673692552532, guid: 45a050ce2c7435defb1e15279fb5a207, type: 3}
       propertyPath: groundLayer.m_Bits
-      value: 4294967295
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4472597874635102973, guid: 45a050ce2c7435defb1e15279fb5a207, type: 3}
       propertyPath: m_Name
@@ -392,7 +392,7 @@ GameObject:
   - component: {fileID: 1877637710}
   - component: {fileID: 1877637712}
   - component: {fileID: 1877637711}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
