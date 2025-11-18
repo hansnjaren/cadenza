@@ -77,11 +77,4 @@ public class Player : MonoBehaviour
 
         return Physics2D.OverlapBox(origin, size, 0.0f, groundLayer);
     }
-
-    public async void OnBeat(int beatNo)
-    {
-        canMove = false;
-        await Task.Delay(300);
-        canMove = true;
-    }
 }

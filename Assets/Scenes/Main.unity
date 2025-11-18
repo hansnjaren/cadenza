@@ -2393,11 +2393,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3739362952569287780, guid: 42ea8f392d85eb3a6b21a39e6d920e3f, type: 3}
       propertyPath: normalPattern.beatEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3739362952569287780, guid: 42ea8f392d85eb3a6b21a39e6d920e3f, type: 3}
       propertyPath: syncopatedPattern.beatEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3739362952569287780, guid: 42ea8f392d85eb3a6b21a39e6d920e3f, type: 3}
       propertyPath: patterns.Array.data[0].beatEvent.m_PersistentCalls.m_Calls.Array.size
