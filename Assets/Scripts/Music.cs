@@ -10,12 +10,17 @@ public class Music : MonoBehaviour
     [SerializeField] private AudioSource musicSource;
     [SerializeField] private double firstBeatOffset;
 
-    [SerializeField] private BeatPattern[] patterns;
+    [SerializeField] private BeatPattern[] customPatterns;
+    [SerializeField] private BeatPattern normalPattern;
+    [SerializeField] private BeatPattern syncopatedPattern;
+    private BeatPattern enabledPattern;
 
     private double secsPerBeat;
     private double songPositionSecs;
     private double songStartTime;
     private double songPositionBeats;
+
+    private BeatPattern[] allPatterns;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -29,6 +34,15 @@ public class Music : MonoBehaviour
         songStartTime = dspTime + 1.0;
 
         musicSource.PlayScheduled(songStartTime);
+
+        if ((GameManager.Instance.GetActiveEffects() & Effects.Syncopation) == Effects.Syncopation)
+        {
+            enabledPattern = syncopatedPattern;
+        }
+        else
+        {
+            enabledPattern = normalPattern;
+        }
     }
 
     // Update is called once per frame
@@ -43,7 +57,7 @@ public class Music : MonoBehaviour
 
         songPositionBeats = songPositionSecs / secsPerBeat;
 
-        foreach (var pattern in patterns)
+        foreach (var pattern in customPatterns.Append(enabledPattern))
         {
 
             if (songPositionBeats > pattern.nextOccurTime)
@@ -58,17 +72,19 @@ public class Music : MonoBehaviour
         }
     }
 
-    public float GetMeasurePosition()
+    public double GetMeasurePosition()
     {
         return (AudioSettings.dspTime - songStartTime - firstBeatOffset) / secsPerBeat % 1.0;
     }
 
     public void OnValidate()
     {
-        foreach (var pattern in patterns)
+        foreach (var pattern in customPatterns.Append(normalPattern).Append(syncopatedPattern))
         {
             pattern.nextOccurTime = pattern.initialOffset;
             pattern.beatsEnumerator = Enumerable.Zip(EnumerableExtensions.Cycle(Enumerable.Range(0, pattern.beats.Length)), EnumerableExtensions.Cycle(pattern.beats), (a, b) => (a, b)).GetEnumerator();
         }
+
+        // TODO: Should we force normal and syncopated pattern to have the same listeners?
     }
 }
