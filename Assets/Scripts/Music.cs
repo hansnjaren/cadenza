@@ -59,6 +59,11 @@ public class Music : MonoBehaviour
 
     }
 
+    public float GetMeasurePosition()
+    {
+        return (AudioSettings.dspTime - songStartTime - firstBeatOffset) / secsPerBeat % 1.0;
+    }
+
     public void OnValidate()
     {
         foreach (var pattern in patterns)
