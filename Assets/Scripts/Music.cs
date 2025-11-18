@@ -56,7 +56,6 @@ public class Music : MonoBehaviour
                 }
             }
         }
-
     }
 
     public float GetMeasurePosition()
