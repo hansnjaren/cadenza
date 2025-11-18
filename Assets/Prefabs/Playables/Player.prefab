@@ -49,7 +49,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDamping: 0.3
+  m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: 63ab263810be15e0694090810af281ec, type: 2}
@@ -109,11 +109,11 @@ MonoBehaviour:
   jumpSpeed: 6
   rigidbody: {fileID: 7362496871501705336}
   halfOnGroundOffset: 0.02
-  slurAcceleration: 25
-  slurDamp: 1
+  slurAcceleration: 50
+  slurDamp: 0.9
   groundLayer:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 8
   canMove: 1
 --- !u!61 &2670840662405235899
 BoxCollider2D:
