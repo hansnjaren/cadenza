@@ -234,11 +234,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2896265673692552532, guid: 45a050ce2c7435defb1e15279fb5a207, type: 3}
       propertyPath: slurDamp
-      value: 0.9995
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 2896265673692552532, guid: 45a050ce2c7435defb1e15279fb5a207, type: 3}
       propertyPath: slurAcceleration
-      value: 10
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2896265673692552532, guid: 45a050ce2c7435defb1e15279fb5a207, type: 3}
       propertyPath: groundLayer.m_Bits
@@ -377,7 +377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b61b3b4a98e690c8a9e03f5bfd9e3f15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ActiveEffects: 2
+  ActiveEffects: 1
 --- !u!1 &1877637706
 GameObject:
   m_ObjectHideFlags: 0
