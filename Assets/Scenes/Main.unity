@@ -2087,6 +2087,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6019508143516976480, guid: 78bdd9263c57ea845947c3958b0b9041, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2100,6 +2104,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4192815682529385983, guid: 9399377231027eb49b053317b24ee338, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4192815682529385983, guid: 9399377231027eb49b053317b24ee338, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4192815682529385983, guid: 9399377231027eb49b053317b24ee338, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4192815682529385983, guid: 9399377231027eb49b053317b24ee338, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4192815682529385983, guid: 9399377231027eb49b053317b24ee338, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4192815682529385983, guid: 9399377231027eb49b053317b24ee338, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4192815682529385983, guid: 9399377231027eb49b053317b24ee338, type: 3}
+      propertyPath: m_SpriteTilingProperty.adaptiveTilingThreshold
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4368303247614532800, guid: 9399377231027eb49b053317b24ee338, type: 3}
       propertyPath: m_Name
       value: Dialogue Interaction
@@ -2152,6 +2184,10 @@ PrefabInstance:
       propertyPath: dialogueUI
       value: 
       objectReference: {fileID: 1484746621}
+    - target: {fileID: 8712541181247877795, guid: 9399377231027eb49b053317b24ee338, type: 3}
+      propertyPath: choicePrefab
+      value: 
+      objectReference: {fileID: 5915963549795102402, guid: efcd99a130aa4284081ccb1e99f33f93, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
