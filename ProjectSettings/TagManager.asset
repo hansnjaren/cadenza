@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Deadly
+  - Spawn Point
   layers:
   - Default
   - TransparentFX
