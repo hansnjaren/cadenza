@@ -639,6 +639,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 763253884251802305, guid: 42ea8f392d85eb3a6b21a39e6d920e3f, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: a5d3b57a22fdc0b19a6328eaf99f32b0, type: 3}
+    - target: {fileID: 3739362952569287780, guid: 42ea8f392d85eb3a6b21a39e6d920e3f, type: 3}
+      propertyPath: bpm
+      value: 87
+      objectReference: {fileID: 0}
+    - target: {fileID: 3739362952569287780, guid: 42ea8f392d85eb3a6b21a39e6d920e3f, type: 3}
+      propertyPath: firstBeatOffset
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3739362952569287780, guid: 42ea8f392d85eb3a6b21a39e6d920e3f, type: 3}
       propertyPath: patterns.Array.size
       value: 1
