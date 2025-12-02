@@ -6,21 +6,36 @@ using UnityEngine.InputSystem;
 public class Player : MonoBehaviour
 {
     [SerializeField] private float speed = 5.0f;
-    [SerializeField] private float jumpSpeed = 6.0f;
+    [SerializeField] private float normalJumpSpeed = 6.0f;
+    [SerializeField] private float staccatoJumpSpeed = 5.0f;
     [SerializeField] private new Rigidbody2D rigidbody;
     [SerializeField] private float halfOnGroundOffset = 0.2f;
     [SerializeField] private float slurAcceleration = 25.0f;
     [SerializeField] private float slurDamp = 1.0f;
+    [SerializeField] private int staccatoJumpAllowanceMs = 400;
 
     [SerializeField] private LayerMask groundLayer;
 
+    private float jumpSpeed;
     private float currentDir;
     public bool canMove = true;
+    private bool canJump = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         GameManager.Instance.UpdateCheckpointPos(transform.position);
+        if ((GameManager.Instance.GetActiveEffects() & Effects.Staccato) == Effects.Staccato)
+        {
+            // Reduce jump height
+            jumpSpeed = staccatoJumpSpeed;
+            // Disallow jumping
+            canJump = false;
+        }
+        else
+        {
+            jumpSpeed = normalJumpSpeed;
+        }
     }
 
     // Update is called once per frame
@@ -66,7 +81,7 @@ public class Player : MonoBehaviour
 
     void OnJump()
     {
-        if (!canMove) return;
+        if (!canMove || !canJump) return;
         if (OnGround())
         {
             rigidbody.linearVelocityY = jumpSpeed;
@@ -95,5 +110,16 @@ public class Player : MonoBehaviour
     public void Die()
     {
         GameManager.Instance.Kill(this);
+    }
+
+    public async void OnBeat(int _beatNo)
+    {
+        if ((GameManager.Instance.GetActiveEffects() & Effects.Staccato) == Effects.Staccato)
+        {
+            // Only allow jumping on the beat
+            canJump = true;
+            await Task.Delay(staccatoJumpAllowanceMs);
+            canJump = false;
+        }
     }
 }
