@@ -106,14 +106,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  jumpSpeed: 6
+  normalJumpSpeed: 6
+  staccatoJumpSpeed: 5
   rigidbody: {fileID: 7362496871501705336}
   halfOnGroundOffset: 0.02
   slurAcceleration: 50
   slurDamp: 0.9
+  staccatoJumpAllowanceMs: 300
   groundLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 4294967295
   canMove: 1
 --- !u!61 &2670840662405235899
 BoxCollider2D:

@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float normalJumpSpeed = 6.0f;
     [SerializeField] private float staccatoJumpSpeed = 5.0f;
     [SerializeField] private new Rigidbody2D rigidbody;
-    [SerializeField] private float halfOnGroundOffset = 0.2f;
+    [SerializeField] private float halfOnGroundOffset = 999.0f;
     [SerializeField] private float slurAcceleration = 25.0f;
     [SerializeField] private float slurDamp = 1.0f;
     [SerializeField] private int staccatoJumpAllowanceMs = 300;
