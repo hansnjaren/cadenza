@@ -20,13 +20,16 @@ public class Player : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        GameManager.Instance.UpdateCheckpointPos(transform.position);
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (transform.position.y < -10.0f)
+        {
+            Die();
+        }
     }
 
     void FixedUpdate()
@@ -76,5 +79,21 @@ public class Player : MonoBehaviour
         Vector2 size = new Vector2(0.45f, halfOnGroundOffset);
 
         return Physics2D.OverlapBox(origin, size, 0.0f, groundLayer);
+    }
+
+    public void TeleportTo(Vector2 position)
+    {
+        rigidbody.linearVelocity = Vector2.zero;
+        rigidbody.angularVelocity = 0.0f;
+        rigidbody.Sleep();
+
+        transform.position = position;
+
+        rigidbody.WakeUp();
+    }
+
+    public void Die()
+    {
+        GameManager.Instance.Kill(this);
     }
 }
