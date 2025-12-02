@@ -1,6 +1,10 @@
-[Guard] Hello, traveler. Welcome to our town.
-[Player] Thank you. What can you tell me about this place?
-[Guard] This town is known for its brave adventurers.
-[Shopkeeper] Would you like to buy some supplies?
-[Player] Yes, please. I need potions and arrows.
-[Guard] Be careful out there. The forest is dangerous.
+Guard: Hello, traveler. Welcome to our town.
+[s1] Choice 1: Ask about the town.
+[s2] Choice 2: Buy supplies.
+[=>ns1] Player: Thank you. What can you tell me about this place?
+[=>ns1] Guard: This town is known for its brave adventurers.
+[=>ns2] Shopkeeper: Would you like to buy some supplies?
+[=>ns2] Player: Yes, please. I need potions and arrows.
+[=>ns2] Bought potions and arrows.
+Guard: Be careful out there. The forest is dangerous.
+[s] End dialogue. 
