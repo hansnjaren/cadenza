@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float halfOnGroundOffset = 0.2f;
     [SerializeField] private float slurAcceleration = 25.0f;
     [SerializeField] private float slurDamp = 1.0f;
-    [SerializeField] private int staccatoJumpAllowanceMs = 400;
+    [SerializeField] private int staccatoJumpAllowanceMs = 300;
 
     [SerializeField] private LayerMask groundLayer;
 
