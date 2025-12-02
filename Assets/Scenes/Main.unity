@@ -2313,11 +2313,11 @@ PrefabInstance:
     - target: {fileID: 7533523955569211838, guid: dd71965001eb02c5b850cd492507cf74, type: 3}
       propertyPath: m_TileAssetArray.Array.data[0].m_Data
       value: 
-      objectReference: {fileID: 11400000, guid: 24e5c6151e3903888a53c33e22309687, type: 2}
+      objectReference: {fileID: 11400000, guid: 05cfbeba08b15d90c8d33eb9e2f02776, type: 2}
     - target: {fileID: 7533523955569211838, guid: dd71965001eb02c5b850cd492507cf74, type: 3}
       propertyPath: m_TileSpriteArray.Array.data[0].m_Data
       value: 
-      objectReference: {fileID: -5111717903506588929, guid: 88b7d19c751f11e1b9f53b3c8ecc8a0a, type: 3}
+      objectReference: {fileID: 7353621977714259684, guid: 2c402c529890b015883919f9ef04d17b, type: 3}
     - target: {fileID: 7533523955569211838, guid: dd71965001eb02c5b850cd492507cf74, type: 3}
       propertyPath: m_TileColorArray.Array.data[0].m_Data.a
       value: 1
