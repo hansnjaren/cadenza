@@ -174,7 +174,7 @@ public class dialogueZone : MonoBehaviour
                 Destroy(child.gameObject);
             }
             childCount = 0;
-            yield return null; 
+            yield return null;
             ShowLine();
         }
 
@@ -298,7 +298,7 @@ public class dialogueZone : MonoBehaviour
             {
                 unselectedIndex = (unselectedIndex + childCount) % childCount;
             }
-            else if(unselectedIndex >= childCount)
+            else if (unselectedIndex >= childCount)
             {
                 unselectedIndex = unselectedIndex % childCount;
             }
