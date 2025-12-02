@@ -8,5 +8,6 @@ public enum Effects
     Syncopation = 2,
     Fermata = 4,
     Rubato = 8,
+    Staccato = 16,
 }
 

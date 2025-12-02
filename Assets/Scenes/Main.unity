@@ -421,6 +421,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4914421687157672062, guid: 9d0ca1af479a9308494fe6bd7ebc2862, type: 3}
+      propertyPath: ActiveEffects
+      value: 16
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -725,11 +729,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3739362952569287780, guid: 42ea8f392d85eb3a6b21a39e6d920e3f, type: 3}
       propertyPath: normalPattern.beatEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3739362952569287780, guid: 42ea8f392d85eb3a6b21a39e6d920e3f, type: 3}
       propertyPath: syncopatedPattern.beatEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3739362952569287780, guid: 42ea8f392d85eb3a6b21a39e6d920e3f, type: 3}
       propertyPath: patterns.Array.data[0].beatEvent.m_PersistentCalls.m_Calls.Array.size
