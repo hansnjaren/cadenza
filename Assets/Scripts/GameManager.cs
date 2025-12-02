@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private Effects ActiveEffects = Effects.None;
 
+    private Vector2 checkpointPos;
+
     private void Awake()
     {
         // This is the core singleton logic
@@ -28,5 +30,16 @@ public class GameManager : MonoBehaviour
     public Effects GetActiveEffects()
     {
         return ActiveEffects;
+    }
+
+    public void UpdateCheckpointPos(Vector2 pos)
+    {
+        checkpointPos = pos;
+    }
+
+    public void Kill(Player player)
+    {
+        player.TeleportTo(checkpointPos);
+        // Handle something else here
     }
 }
